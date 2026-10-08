@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Admin Dashboard - Campus Issue Tracker</title>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head><body>
+<div id="site-nav"></div>
+<main class="container admin-page">
+  <div class="admin-heading">
+    <div><h1>Admin Dashboard</h1><p class="lead">Review campus reports, update their status, and add resolution notes.</p></div>
+    <button id="refresh-btn" class="btn btn-outline" type="button">Refresh</button>
+  </div>
+
+  <div id="admin-message" class="hidden" role="status"></div>
+
+  <section class="stats-grid" aria-label="Issue summary">
+    <div class="stat-card"><span>Total</span><strong id="stat-total">0</strong></div>
+    <div class="stat-card"><span>Reported</span><strong id="stat-reported">0</strong></div>
+    <div class="stat-card"><span>In Progress</span><strong id="stat-progress">0</strong></div>
+    <div class="stat-card"><span>Resolved</span><strong id="stat-resolved">0</strong></div>
+    <div class="stat-card"><span>Rejected</span><strong id="stat-rejected">0</strong></div>
+  </section>
+
+  <section class="admin-toolbar">
+    <input id="admin-search" type="text" placeholder="Search title, description, reporter..." aria-label="Search issues">
+    <select id="admin-status" aria-label="Filter by status">
+      <option value="">All statuses</option><option value="reported">Reported</option><option value="in_progress">In Progress</option><option value="resolved">Resolved</option><option value="rejected">Rejected</option>
+    </select>
+    <select id="admin-category" aria-label="Filter by category">
+      <option value="">All categories</option><option value="equipment">Equipment</option><option value="safety">Safety</option><option value="maintenance">Maintenance</option><option value="wifi">Wi-Fi</option><option value="other">Other</option>
+    </select>
+  </section>
+
+  <div id="admin-list" class="admin-list"></div>
+  <div id="admin-empty" class="empty hidden">No issues match the current filters.</div>
+</main>
+<div id="site-footer"></div>
+<script src="js/config.js"></script>
+<script src="js/mock-data.js"></script>
+<script src="js/api.js"></script>
+<script src="js/main.js"></script>
+<script src="js/admin.js"></script>
+</body></html>

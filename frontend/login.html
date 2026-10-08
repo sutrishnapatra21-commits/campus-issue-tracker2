@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Log in or Register - Campus Issue Tracker</title>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css"></head>
+<body>
+<div id="site-nav"></div>
+<main class="container">
+  <section class="auth-layout">
+    <div class="auth-hero" style="background-image:url('assets/campus-hero.png')">
+      <div class="auth-hero-text">
+        <h1>A safer, better campus for everyone</h1>
+        <p>Report issues, track progress, and help make our campus better.</p>
+      </div>
+    </div>
+
+    <div class="auth-card">
+      <div class="tabs" role="tablist">
+        <button type="button" class="tab-btn active" id="tab-login-btn" role="tab" aria-selected="true">Login</button>
+        <button type="button" class="tab-btn" id="tab-register-btn" role="tab" aria-selected="false">Register</button>
+      </div>
+
+      <div id="login-message" class="hidden"></div>
+
+      <!-- LOGIN -->
+      <form id="login-form" class="tab-panel" novalidate>
+        <div class="form-group"><label for="login-email">Email</label><input type="email" id="login-email" name="email" autocomplete="email" placeholder="you@iem.edu.in"></div>
+        <div class="form-group"><label for="login-password">Password</label><input type="password" id="login-password" name="password" autocomplete="current-password"></div>
+        <button type="submit" class="btn" style="width:100%">Log in</button>
+      </form>
+
+      <!-- REGISTER -->
+      <form id="register-form" class="tab-panel hidden" novalidate>
+        <div class="form-group"><label for="register-name">Full name</label><input type="text" id="register-name" name="name" autocomplete="name"></div>
+        <div class="form-group"><label for="register-email">Email</label><input type="email" id="register-email" name="email" autocomplete="email" placeholder="you@iem.edu.in"></div>
+        <div class="form-group"><label for="register-password">Password</label><input type="password" id="register-password" name="password" autocomplete="new-password"></div>
+        <div class="form-group"><label for="register-confirm">Confirm password</label><input type="password" id="register-confirm" name="confirm_password" autocomplete="new-password"></div>
+        <button type="submit" class="btn" style="width:100%">Create account</button>
+      </form>
+
+      <p class="hint" style="margin-top:1rem">New students register with a student account automatically. Admin accounts are created separately by the team.</p>
+    </div>
+  </section>
+</main>
+<div id="site-footer"></div>
+<script src="js/config.js"></script>
+<script src="js/mock-data.js"></script>
+<script src="js/api.js"></script>
+<script src="js/main.js"></script>
+<script src="js/login.js"></script>
+</body></html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Report an Issue - Campus Issue Tracker</title>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<!-- Leaflet CSS (needed by Ananya's map) -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+</head>
+<body>
+<div id="site-nav"></div>
+<main class="container">
+  <h1>Report an issue</h1>
+  <p class="lead">Fields marked * are required.</p>
+  <form id="issue-form" class="form-card" novalidate>
+    <div id="form-banner" class="hidden" role="status"></div>
+
+    <div class="form-group">
+      <label for="student_class">Class *</label>
+      <input type="text" id="student_class" name="student_class" maxlength="80" placeholder="e.g. B.Tech CSE 2nd Year">
+      <div class="error-msg" id="error-student_class"></div>
+    </div>
+
+    <div class="form-group">
+      <label for="section">Section *</label>
+      <input type="text" id="section" name="section" maxlength="40" placeholder="e.g. CSE-A">
+      <div class="error-msg" id="error-section"></div>
+    </div>
+
+    <div class="form-group">
+      <label for="title">Issue title *</label>
+      <input type="text" id="title" name="title" maxlength="120" placeholder="e.g. Broken fan in Lab 3">
+      <div class="error-msg" id="error-title"></div>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description *</label>
+      <textarea id="description" name="description" placeholder="What is wrong, and how does it affect people?"></textarea>
+      <div class="error-msg" id="error-description"></div>
+    </div>
+
+    <div class="form-group">
+      <label for="category">Category *</label>
+      <!-- values match the backend's CHECK constraint exactly (equipment/safety/maintenance/wifi/other) -->
+      <select id="category" name="category">
+        <option value="">Select a category</option>
+        <option value="equipment">Equipment</option>
+        <option value="safety">Safety</option>
+        <option value="maintenance">Maintenance</option>
+        <option value="wifi">Wi-Fi</option>
+        <option value="other">Other</option>
+      </select>
+      <div class="error-msg" id="error-category"></div>
+    </div>
+
+    <div class="form-group">
+      <label for="photo">Photo <span class="optional">(optional)</span></label>
+      <input type="file" id="photo" name="photo" accept="image/*">
+      <img id="photo-preview" class="preview hidden" alt="Selected photo preview">
+      <div class="error-msg" id="error-photo"></div>
+    </div>
+
+    <div class="form-group">
+      <label for="campus">Which campus? <span class="optional">(optional — jumps the map there)</span></label>
+      <select id="campus" name="campus">
+        <option value="">Select a campus to jump the map there</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Location *</label>
+      <p class="hint" style="margin-bottom:.5rem">Pick a campus above, or click the map directly. Drag the pin to fine-tune the exact spot.</p>
+      <!-- MAP SLOT (Ananya): her Leaflet map is created inside this div -->
+      <div id="map">Map area: Ananya's Leaflet map loads here.</div>
+      <div class="coords">
+        <div><label for="latitude">Latitude</label><input type="text" id="latitude" name="latitude" readonly placeholder="Not selected"></div>
+        <div><label for="longitude">Longitude</label><input type="text" id="longitude" name="longitude" readonly placeholder="Not selected"></div>
+      </div>
+      <div class="error-msg" id="error-location"></div>
+    </div>
+
+    <div class="form-group">
+      <label for="location_note">Building / room <span class="optional">(optional)</span></label>
+      <input type="text" id="location_note" name="location_note" placeholder="e.g. CSE Block, Room 203 — fills in automatically when you pick a campus above, edit freely">
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" id="submit-btn" class="btn">Submit issue</button>
+      <button type="reset" class="btn btn-outline">Clear form</button>
+    </div>
+  </form>
+</main>
+<div id="site-footer"></div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="js/config.js"></script>
+<script src="js/mock-data.js"></script>
+<script src="js/api.js"></script>
+<script src="js/main.js"></script>
+<!-- Ananya's map file MUST load before report-issue.js, which calls initLocationPicker() -->
+<script src="js/map.js"></script>
+<script src="js/campus-locations.js"></script>
+<script src="js/report-issue.js"></script>
+</body></html>

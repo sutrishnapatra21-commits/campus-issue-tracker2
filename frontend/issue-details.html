@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Issue Details - Campus Issue Tracker</title>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+</head>
+<body>
+<div id="site-nav"></div>
+<main class="container">
+  <a href="issues.html">&larr; Back to all issues</a>
+  <div id="issue-detail" class="detail"><p>Loading...</p></div>
+</main>
+<div id="site-footer"></div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="js/config.js"></script>
+<script src="js/mock-data.js"></script>
+<script src="js/api.js"></script>
+<script src="js/main.js"></script>
+<!-- Ananya's map file defines showSavedLocation and must load first. -->
+<script src="js/map.js"></script>
+<script src="js/issue-details.js"></script>
+</body></html>

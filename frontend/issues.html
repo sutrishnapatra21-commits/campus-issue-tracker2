@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>View Issues - Campus Issue Tracker</title>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css"></head>
+<body>
+<div id="site-nav"></div>
+<main class="container">
+  <h1>Reported issues</h1>
+  <p class="lead">See what has been reported around campus and where each issue stands.</p>
+  <div class="filters">
+    <input type="text" id="search" placeholder="Search issues" aria-label="Search issues">
+    <!-- values match the backend's status CHECK constraint exactly -->
+    <select id="filter-status" aria-label="Filter by status">
+      <option value="">All statuses</option>
+      <option value="reported">Reported</option>
+      <option value="in_progress">In Progress</option>
+      <option value="resolved">Resolved</option>
+      <option value="rejected">Rejected</option>
+    </select>
+    <!-- values match the backend's category CHECK constraint exactly -->
+    <select id="filter-category" aria-label="Filter by category">
+      <option value="">All categories</option>
+      <option value="equipment">Equipment</option>
+      <option value="safety">Safety</option>
+      <option value="maintenance">Maintenance</option>
+      <option value="wifi">Wi-Fi</option>
+      <option value="other">Other</option>
+    </select>
+  </div>
+  <div id="issues-message" class="empty">Loading issues...</div>
+  <div id="issues-list" class="grid"></div>
+</main>
+<div id="site-footer"></div>
+<script src="js/config.js"></script>
+<script src="js/mock-data.js"></script>
+<script src="js/api.js"></script>
+<script src="js/main.js"></script>
+<script src="js/issues.js"></script>
+</body></html>

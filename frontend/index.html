@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Campus Issue Tracker</title>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css"></head>
+<body class="home-page">
+<div id="site-nav"></div>
+<main class="container home-main">
+  <section class="hero hero-v2">
+    <div class="hero-copy">
+      <div class="eyebrow"><span class="eyebrow-dot"></span> CAMPUS PULSE <span class="eyebrow-line"></span> MAKE IT BETTER</div>
+      <h1>See a problem?<br><span>Make it visible.</span></h1>
+      <p class="lead">From a broken projector to a Wi-Fi dead zone, report what you notice and help the right people fix it faster.</p>
+      <div class="hero-actions">
+        <a class="btn btn-hero" href="report-issue.html">Report an Issue <span aria-hidden="true">→</span></a>
+        <a class="btn btn-outline" href="issues.html">Explore Reports</a>
+      </div>
+      <div class="hero-trust"><span class="mini-check">✓</span> Quick to report <span>•</span> <span class="mini-check">✓</span> Easy to track <span>•</span> <span class="mini-check">✓</span> Built for campus</div>
+    </div>
+
+    <div class="pulse-board" aria-label="Campus issue activity">
+      <div class="pulse-glow"></div>
+      <div class="pulse-topbar"><span class="live-dot"></span><strong>Campus pulse</strong><span class="pulse-time">LIVE</span></div>
+      <div class="pulse-title">What needs attention?</div>
+      <div class="slips" data-motion="issues">
+        <article class="slip slip-featured"><div class="slip-accent"></div><div class="slip-row"><span class="badge status-reported">Reported</span><span class="slip-id">#204</span></div><h3>Projector not working</h3><p>Room 204 · Equipment</p><div class="slip-progress"><span></span></div></article>
+        <article class="slip"><div class="slip-row"><span class="badge status-in-progress">In Progress</span><span class="slip-id">#203</span></div><h3>Loose wiring near canteen</h3><p>Safety · Maintenance team notified</p></article>
+        <article class="slip"><div class="slip-row"><span class="badge status-resolved">Resolved</span><span class="slip-id">#198</span></div><h3>Library Wi-Fi restored</h3><p>2nd floor · Access point replaced</p></article>
+      </div>
+      <div class="pulse-footer"><span class="pulse-bars"><i></i><i></i><i></i><i></i><i></i></span><span>Every report moves the campus forward.</span></div>
+    </div>
+  </section>
+
+  <section class="impact-strip reveal" aria-label="Campus activity">
+    <div class="impact-intro"><span>AT A GLANCE</span><strong>Small reports. Real improvements.</strong></div>
+    <div class="impact-stat"><strong id="home-stat-total">—</strong><span>reports logged</span></div>
+    <div class="impact-stat"><strong id="home-stat-progress">—</strong><span>being worked on</span></div>
+    <div class="impact-stat"><strong id="home-stat-resolved">—</strong><span>resolved</span></div>
+  </section>
+
+  <section class="how-section">
+    <div class="section-heading reveal"><div><span class="section-kicker">HOW IT WORKS</span><h2>From “someone should fix this” to “done.”</h2></div><p>Three simple steps keep the process clear for students and staff.</p></div>
+    <div class="steps steps-v2">
+      <article class="step-card reveal"><div class="step-number">01</div><div class="step-icon">✦</div><h3>Describe it</h3><p>Add a title, category, description and an optional photo. Keep it clear and specific.</p><span class="step-arrow">→</span></article>
+      <article class="step-card reveal"><div class="step-number">02</div><div class="step-icon">⌖</div><h3>Pin it</h3><p>Choose the campus location and pinpoint where the issue is so nobody has to hunt for it.</p><span class="step-arrow">→</span></article>
+      <article class="step-card reveal"><div class="step-number">03</div><div class="step-icon">✓</div><h3>Track it</h3><p>Watch the status move from Reported to In Progress and finally to Resolved.</p><span class="step-arrow">Done</span></article>
+    </div>
+  </section>
+
+  <section class="home-cta reveal">
+    <div><span class="section-kicker">YOUR CAMPUS, YOUR INPUT</span><h2>Notice something? Don’t let it stay invisible.</h2><p>A 60-second report can save someone else a frustrating hour.</p></div>
+    <a class="btn btn-hero" href="report-issue.html">Report it now <span aria-hidden="true">→</span></a>
+  </section>
+</main>
+<div id="site-footer"></div>
+<script src="js/config.js"></script>
+<script src="js/mock-data.js"></script>
+<script src="js/api.js"></script>
+<script src="js/main.js"></script>
+</body></html>
